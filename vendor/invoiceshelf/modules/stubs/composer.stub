@@ -1,0 +1,45 @@
+{
+    "name": "invoiceshelf/module-$KEBAB_NAME$",
+    "description": "",
+    "license": "AGPL-3.0-only",
+    "authors": [
+        {
+            "name": "$AUTHOR_NAME$",
+            "email": "$AUTHOR_EMAIL$"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "invoiceshelf/modules": "^3.4"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.16",
+        "orchestra/testbench": "^11.0",
+        "phpunit/phpunit": "^12.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\": "$APP_FOLDER_NAME$",
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Database\\Factories\\": "database/factories/",
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/pint --test"
+    }
+}
